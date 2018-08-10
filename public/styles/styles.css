@@ -28,9 +28,6 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Do Hyeon', sans-serif;
-  background-color: black;
-  border: solid 2px gray;
 }
 
 #logButt {
@@ -38,9 +35,16 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.pgButt {
   font-family: 'Do Hyeon', sans-serif;
   background-color: black;
   border: solid 2px gray;
+}
+
+.modal {
+  font-family: 'Do Hyeon', sans-serif;
 }
 
 

@@ -10,11 +10,11 @@
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-1">
-      <button id="regButt" type="button" class="btn btn-primary">Register</button>
+      <button id="regButt" type="button" class="btn btn-primary pgButt">Register</button>
     </div>
     <div class="col-md-2"></div>
     <div class="col-md-1">
-      <button id="logButt" type="button" class="btn btn-primary">Login</button>
+      <button id="logButt" type="button" class="btn btn-primary pgButt">Login</button>
     </div>
     <div class="col-md-4"></div>
   </div>
@@ -31,15 +31,15 @@
           <form>
             <div class="form-group">
               <label for="exampleInputEmail1">Create Username</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter desired Username">
+              <input type="email" class="form-control" id="createUser" aria-describedby="emailHelp" placeholder="Enter desired Username">
               <small id="emailHelp" class="form-text text-muted">We'll never share your Username with anyone else.</small>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input type="password" class="form-control" id="createPass" placeholder="Password">
             </div>
-            <button type="submit" class="btn btn-primary">Continue</button>
-            <button type="submit" class="btn btn-primary">Return</button>
+            <button type="submit" class="btn btn-primary pgButt" id="regCont">Continue</button>
+            <button type="submit" class="btn btn-primary pgButt">Return</button>
           </form>
         </div>
       </div>
@@ -59,15 +59,15 @@
           <form>
             <div class="form-group">
               <label for="exampleInputEmail1">Username</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+              <input type="email" class="form-control" id="logUser" aria-describedby="emailHelp" placeholder="Enter Username">
               <small id="emailHelp" class="form-text text-muted">We'll never share your Username with anyone else.</small>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input type="password" class="form-control" id="logPass" placeholder="Password">
             </div>
-            <button type="submit" class="btn btn-primary">Continue</button>
-            <button type="submit" class="btn btn-primary">Return</button>
+            <button type="submit" class="btn btn-primary pgButt" id="logCont">Continue</button>
+            <button type="submit" class="btn btn-primary pgButt">Return</button>
           </form>
         </div>
       </div>
@@ -91,5 +91,19 @@
   $("#logButt").on("click", function (event) {
     event.preventDefault();
     $("#loginModal").modal("show");
+  });
+</script>
+
+<script type="text/javascript">
+  $("#logCont").on("click", function (event) {
+    event.preventDefault();
+    location.href = "content.handlbars";
+  });
+</script>
+
+<script type="text/javascript">
+  $("#regCont").on("click", function (event) {
+    event.preventDefault();
+    location.href = "content.handlbars">;
   });
 </script>
