@@ -2,4 +2,9 @@
   line-height: 2.5;
 }
 
+#homeTitle {
+  text-align: center;
+  margin-top: 15%;
+}
+
 body {background-image: url("../images/background.jpg")}
