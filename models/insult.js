@@ -1,8 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
-  var Message = sequelize.define("Messages", {
+  var insult = sequelize.define("insults", {
     MessageBody: DataTypes.STRING,
-    Insult: DataTypes.BOOLEAN,
     Saved: DataTypes.BOOLEAN
   });
-  return Message;
+  return insult;
 };
