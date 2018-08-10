@@ -1,11 +1,95 @@
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
 
 <div id="mainpage">
-  <h1 id ="homeTitle">MAKE||BREAK</h1>
-  <p id ="homeDesc"The one place that makes or breaks a person’s day anonymously</p>
-  <button  id ="regButt"type="button" class="btn btn-primary">Register</button>
-  <button id ="logButt"type="button" class="btn btn-primary">Login</button>
+  <div class="row">
+    <h1 id="homeTitle">MAKE || BREAK</h1>
+  </div>
+  <div class="row">
+    <p id="homeDesc">The one place that makes or breaks a person’s day anonymously</p>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-1">
+      <button id="regButt" type="button" class="btn btn-primary">Register</button>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-1">
+      <button id="logButt" type="button" class="btn btn-primary">Login</button>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+
+  <!-- Modal for Register -->
+
+  <div id="registerModal" class="modal hide" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Please Register</h1>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Create Username</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter desired Username">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your Username with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Continue</button>
+            <button type="submit" class="btn btn-primary">Return</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal for Login -->
+
+  <div id="loginModal" class="modal hide" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Please Login</h1>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Username</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your Username with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Continue</button>
+            <button type="submit" class="btn btn-primary">Return</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="/js/index.js"></script>
+
+<script type="text/javascript">
+  $("#regButt").on("click", function (event) {
+    event.preventDefault();
+    $("#registerModal").modal("show");
+  });
+</script>
+
+<script type="text/javascript">
+  $("#logButt").on("click", function (event) {
+    event.preventDefault();
+    $("#loginModal").modal("show");
+  });
+</script>

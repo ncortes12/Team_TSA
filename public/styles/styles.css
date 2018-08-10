@@ -1,10 +1,46 @@
-.list-group-item {
-  line-height: 2.5;
+body {
+  background-image: url(http://static.hdw.eweb4.com/media/wallpapers_1920x1200/abstract/1/1/polka-dot-pattern-and-wood-texture-abstract-hd-wallpaper-1920x1200-7789.jpg)
 }
 
 #homeTitle {
+  font-size: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Do Hyeon', sans-serif;
+  color: white;
   text-align: center;
   margin-top: 15%;
 }
 
-body {background-image: url("../images/background.jpg")}
+#homeDesc {
+  font-size: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Do Hyeon', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+#regButt {
+  margin-top: 13%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Do Hyeon', sans-serif;
+  background-color: black;
+  border: solid 2px gray;
+}
+
+#logButt {
+  margin-top: 13%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Do Hyeon', sans-serif;
+  background-color: black;
+  border: solid 2px gray;
+}
+
+
