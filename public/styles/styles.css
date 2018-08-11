@@ -71,10 +71,32 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 7%;
 }
 
 .genText {
   color: white;
   font-size: 25px;
   font-family: 'Do Hyeon', sans-serif;
+}
+
+.card {
+  margin-top: 20%;
+}
+.card-body {
+  background: darkgrey;
+  font-family: 'Do Hyeon', sans-serif;
+  color: black;
+  text-align: center;
+}
+
+.contentButt {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.genRow {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
 }
