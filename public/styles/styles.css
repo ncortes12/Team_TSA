@@ -1,5 +1,7 @@
+/* Index CSS*/
+
 body {
-  background-image: url(http://static.hdw.eweb4.com/media/wallpapers_1920x1200/abstract/1/1/polka-dot-pattern-and-wood-texture-abstract-hd-wallpaper-1920x1200-7789.jpg)
+  background-image: url(https://bestwallpapers.co/wp-content/uploads/2018/05/black-background-hole-4k-hd-desktop-wallpaper-for-ultra-tv.jpg)
 }
 
 #homeTitle {
@@ -28,9 +30,6 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Do Hyeon', sans-serif;
-  background-color: black;
-  border: solid 2px gray;
 }
 
 #logButt {
@@ -38,9 +37,44 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.pgButt {
   font-family: 'Do Hyeon', sans-serif;
   background-color: black;
   border: solid 2px gray;
 }
 
+.modal {
+  font-family: 'Do Hyeon', sans-serif;
+}
 
+/*Content CSS*/
+
+#contentHeader{
+  background: rgb(39, 38, 38);
+  height: 55px;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#headerTitle{
+  color: white;
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 7px;
+
+}
+
+.genColumn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.genText {
+  color: white;
+  font-size: 25px;
+  font-family: 'Do Hyeon', sans-serif;
+}
