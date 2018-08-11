@@ -28,7 +28,7 @@
           <h3 class="modal-title">Please Register</h1>
         </div>
         <div class="modal-body">
-          <form>
+          <form class="contButt">
             <div class="form-group">
               <label for="exampleInputEmail1">Create Username</label>
               <input type="email" class="form-control" id="createUser" aria-describedby="emailHelp" placeholder="Enter desired Username">
@@ -39,7 +39,7 @@
               <input type="password" class="form-control" id="createPass" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-primary pgButt" id="regCont">Continue</button>
-            <button type="submit" class="btn btn-primary pgButt">Return</button>
+            <button class="btn btn-primary pgButt">Return</button>
           </form>
         </div>
       </div>
@@ -56,7 +56,7 @@
           <h3 class="modal-title">Please Login</h1>
         </div>
         <div class="modal-body">
-          <form>
+          <form class="contButt">
             <div class="form-group">
               <label for="exampleInputEmail1">Username</label>
               <input type="email" class="form-control" id="logUser" aria-describedby="emailHelp" placeholder="Enter Username">
@@ -67,7 +67,7 @@
               <input type="password" class="form-control" id="logPass" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-primary pgButt" id="logCont">Continue</button>
-            <button type="submit" class="btn btn-primary pgButt">Return</button>
+            <button class="btn btn-primary pgButt">Return</button>
           </form>
         </div>
       </div>
@@ -95,15 +95,10 @@
 </script>
 
 <script type="text/javascript">
-  $("#logCont").on("click", function (event) {
+  $(".contButt").on("submit", function (event) {
     event.preventDefault();
     location.href = "http://localhost:3000/welcome";
+    
   });
 </script>
 
-<script type="text/javascript">
-  $("#regCont").on("click", function (event) {
-    event.preventDefault();
-    location.href = "http://localhost:3000/welcome">;
-  });
-</script>
