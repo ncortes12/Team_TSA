@@ -95,7 +95,6 @@ body {
   font-size: 25px;
   font-family: 'Do Hyeon', sans-serif;
 }
-
 .card {
   margin-top: 3%;
 }
@@ -140,7 +139,20 @@ body {
     margin-right: auto; 
 }
 }
-/*Second Media Query for 865px*/
+
+/*Second Media Query for 960px*/
+
+@media only screen and (max-width:960px){
+  #homeTitle {
+    font-size: 100px;
+  }
+
+  #homeDesc {
+    font-size: 20px;
+  }
+
+}
+/*Third Media Query for 865px*/
 
 @media only screen and (max-width:865px){
 .cardrow{
@@ -150,13 +162,29 @@ body {
 }
 }
 
-/*Extra Styling */
+/*Fourth Media Query for 635px*/
 
-.pgButt:hover {
-  font-family: 'Do Hyeon', sans-serif;
-  background-color: gray;
-  border: solid 5px black;
-  padding: 5%;
-  font-size: 18px;
+@media only screen and (max-width:635px){
+  #homeTitle {
+    font-size: 80px;
+  }
+
+  #homeDesc {
+    font-size: 20px;
+  }
+
 }
 
+/*Fourth Media Query for 430px*/
+
+@media only screen and (max-width:430px){
+  #homeTitle {
+    font-size: 60px;
+  }
+
+  #homeDesc {
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+
+}
