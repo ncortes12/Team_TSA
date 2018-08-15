@@ -153,6 +153,20 @@ p{color:white}
     font-size: 20px;
   }
 
+  #imgLeft {
+    float: left;
+    margin-left: 4%;
+    width: 90px;
+    height: 70px;
+  }
+  
+  #imgRight {
+    float: right;
+    margin-right: 4%;
+    width: 90px;
+    height: 70px;
+  }
+
 }
 /*Third Media Query for 865px*/
 
@@ -177,16 +191,74 @@ p{color:white}
 
 }
 
-/*Fourth Media Query for 430px*/
+/*Sixth Media Query for 545px*/
+
+@media only screen and (max-width:545px){
+  
+  #imgLeft {
+    float: left;
+    margin-left: 4%;
+    width: 70px;
+    height: 50px;
+  }
+  
+  #imgRight {
+    float: right;
+    margin-right: 4%;
+    width: 70px;
+    height: 50px;
+  } 
+}
+
+/*Seventh Media Query for 510px*/
+
+@media only screen and (max-width:510px){
+
+  #imgLeft {
+    float: left;
+    margin-left: 4%;
+    width: 50px;
+    height: 30px;
+  }
+  
+  #imgRight {
+    float: right;
+    margin-right: 4%;
+    width: 50px;
+    height: 30px;
+  } 
+
+}
+
+/*Eigth Media Query for 430px*/
 
 @media only screen and (max-width:430px){
-  #homeTitle {
-    font-size: 60px;
+  #headerTitleText {
+    margin-top: 30px;
+    font-size: 30px;
   }
 
-  #homeDesc {
-    margin-left: 4%;
-    margin-right: 4%;
+  #imgLeft {
+    float: left;
+    margin-left: 6%;
   }
+  
+  #imgRight {
+    float: right;
+    margin-right: 6%;
+  } 
+}
+
+/*Ninth Media Query for 360px*/
+
+@media only screen and (max-width:360px){
+  
+  #imgLeft {
+    display: none;
+  }
+  
+  #imgRight {
+   display: none;
+  } 
 
 }
