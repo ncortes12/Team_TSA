@@ -1,46 +1,58 @@
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
 
 <div id="contentpage">
-    <Header id="contentHeader">
-        <div id="headerTitle">
-            MAKE || BREAK
+    <div id="headerTitle">
+        <div class="row">
+            <img id="imgLeft" src="data:image/png;base64,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"
+                alt="masks" width="120" height="80"> 
+            <div id="headerTitleText">Make || Break</div>
+            <img id="imgRight" src="data:image/png;base64,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"
+                alt="masks" width="120" height="80">
         </div>
-    </Header>
+    </div>
+
+
 
     <!--Generator Row-->
 
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-2 genColumn">
-            <div class="row">
+            <div class="row genRow">
+
                 <form>
                     <div class="form-group">
                         <label for="insultInputs" class="genText">Insult Generator</label>
-                        <input type="text" class="form-control" id="insult" placeholder="Insert Custom">
+                        <input type="text" class="form-control genInput" id="insult" placeholder="">
                     </div>
                 </form>
             </div>
-            <div class="row">
+
+            <div class="row genRow">
                 <button id="insulButt" type="button" class="btn btn-primary pgButt contentButt">Generate</button>
-                <button id="saveButt" type="button" class="btn btn-primary pgButt contentButt">Save</button>
-                <button id="sendButt" type="button" class="btn btn-primary pgButt contentButt">Send</button>
+                <button class="btn btn-primary pgButt saveButt contentButt" type="button">Save</button>
+                <button class="btn btn-primary pgButt sendButt contentButt" type="button">Send</button>
+
             </div>
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-1"></div>
         <div class="col-md-2 genColumn">
-            <div class="row">
+            <div class="row genRow">
+
                 <form>
                     <div class="form-group">
                         <label for="complimentInputs" class="genText">Compliment Generator</label>
-                        <input type="text" class="form-control" id="compliment" placeholder="Insert Custom">
+                        <input type="text" class="form-control genInput" id="compliment" placeholder="">
                     </div>
                 </form>
             </div>
-            <div class="row">
+
+            <div class="row genRow">
                 <button id="compButt" type="button" class="btn btn-primary pgButt contentButt">Generate</button>
-                <button id="saveButt" type="button" class="btn btn-primary pgButt contentButt">Save</button>
-                <button id="sendButt" type="button" class="btn btn-primary pgButt contentButt">Send</button>
+                <button class="btn btn-primary pgButt saveButt contentButt" type="button">Save</button>
+                <button class="btn btn-primary pgButt sendButt contentButt" type="button">Send</button>
+
             </div>
         </div>
         <div class="col-md-2"></div>
@@ -52,28 +64,52 @@
 
     <!--Insult/Compliment Row-->
 
-    <div class="row">
+
+    <div class="row cardrow">
         <div class="col-md-2"></div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
+        <div class="card cards" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
         </div>
         <div class="col-md-2"></div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
+        <div class="card cards" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
         </div>
         <div class="col-md-2"></div>
+    </div>
+
+    <!--Send Modal-->
+
+    <div id="sendModal" class="modal hide" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Please Login</h1>
+                </div>
+                <div class="modal-body">
+                    <form class="contButt">
+                        <div class="form-group">
+                            <label for="inputPhonenumber">Phone Number</label>
+                            <input type="phonenumber" class="form-control" id="phonenumber" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+                            <small class="form-text text-muted">We'll never store the the Phone Number</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputInsComp">Message</label>
+                            <input type="messages" class="form-control" id="message" placeholder="">
+                        </div>
+                        <button type="submit" class="btn btn-primary pgButt sendButt">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </div>
@@ -82,4 +118,11 @@
     crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="/js/index.js"></script>
+
+<script type="text/javascript">
+    $(".sendButt").on("click", function (event) {
+        event.preventDefault();
+        $("#sendModal").modal("show");
+    });
+</script>
 

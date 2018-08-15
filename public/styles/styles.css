@@ -51,21 +51,37 @@ body {
 
 /*Content CSS*/
 
-#contentHeader{
-  background: rgb(39, 38, 38);
-  height: 55px;
+#headerTitle{
+  background: black;
   max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  margin-bottom: 7px;
+  height: 100px;
+  border: solid 4px gray;
+}
+
+#headerTitleText {
+  color: white;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 35px;
+  text-align: center;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-#headerTitle{
-  color: white;
-  text-align: center;
-  font-size: 35px;
-  margin-bottom: 7px;
-
+#imgLeft {
+  float: left;
+  margin-left: 2%;
 }
+
+#imgRight {
+  float: right;
+  margin-right: 2%;
+}
+
 
 .genColumn {
   display: block;
@@ -81,8 +97,15 @@ body {
 }
 
 .card {
-  margin-top: 20%;
+  margin-top: 3%;
 }
+
+.cards {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;  
+}
+
 .card-body {
   background: darkgrey;
   font-family: 'Do Hyeon', sans-serif;
@@ -99,4 +122,41 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto; 
+  text-align: center;
 }
+
+.genInput {
+  max-width: 85%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+/*First Media Query for 1125px*/
+
+@media only screen and (max-width:1125px){
+  .cardrow{
+    margin-left: auto;
+    margin-right: auto; 
+}
+}
+/*Second Media Query for 865px*/
+
+@media only screen and (max-width:865px){
+.cardrow{
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+}
+}
+
+/*Extra Styling */
+
+.pgButt:hover {
+  font-family: 'Do Hyeon', sans-serif;
+  background-color: gray;
+  border: solid 5px black;
+  padding: 5%;
+  font-size: 18px;
+}
+
