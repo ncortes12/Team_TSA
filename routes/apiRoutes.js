@@ -2,15 +2,17 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all examples
-  app.post("/api/complements/", function(req, res) {
+  app.get("/api/complements/:id", function(req, res) {
     console.log("look this route is working! You're the best!");
-    console.log(req.body.id);
-    db.complement
-      .findAll({
-        where: { id: req.body.id }
-      })
-      .then(function(complementBody) {
-        console.log(complementBody);
-      });
+    var id = req.params.id;
+    console.log(id);
+    db.Complement.findAll({
+      where: { id: id }
+    }).then(function(complementBody) {
+      console.log(complementBody[0].MessageBody);
+      var hbsObject = { complement: complementBody[0].MessageBody };
+      console.log(hbsObject);
+      res.render("content", hbsObject);
+    });
   });
 };
