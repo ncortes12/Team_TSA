@@ -1,4 +1,11 @@
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id" content="825697574361-llke7qn5k9jgrc9434vr44iq30sj6r0m.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+
+
+
 
 <div id="mainpage">
   <div class="row">
@@ -9,13 +16,8 @@
   </div>
   <div class="row">
     <div class="col-md-4"></div>
-    <div class="col-md-1">
-      <button id="regButt" type="button" class="btn btn-primary pgButt">Register</button>
-    </div>
-    <div class="col-md-2"></div>
-    <div class="col-md-1">
-      <button id="logButt" type="button" class="btn btn-primary pgButt">Login</button>
-    </div>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <a href="#" onclick="signOut();">Sign out</a>
     <div class="col-md-4"></div>
   </div>
 
@@ -79,24 +81,24 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="/js/index.js"></script>
 
-<script type="text/javascript">
-  $("#regButt").on("click", function (event) {
-    event.preventDefault();
-    $("#registerModal").modal("show");
-  });
+
+<script>
+  var revokeAllScopes = function() {
+  auth2.disconnect();
+}
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
 </script>
 
-<script type="text/javascript">
-  $("#logButt").on("click", function (event) {
-    event.preventDefault();
-    $("#loginModal").modal("show");
-  });
-</script>
 
 <script type="text/javascript">
   $(".contButt").on("submit", function (event) {
     event.preventDefault();
     location.href = "http://localhost:3000/welcome";
-    
+
   });
 </script>
