@@ -21,7 +21,9 @@ $("#compButt").on("click", function() {
 
 $("#sendMessage").on("click", function(event) {
   event.preventDefault();
-  var phone = $("#phonenumber").val().trim();
+  var phone = $("#phonenumber")
+    .val()
+    .trim();
   var newText = {
     number: phone,
     message: message
