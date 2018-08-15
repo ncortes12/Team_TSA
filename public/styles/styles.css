@@ -3,6 +3,8 @@
 body {
   background-image: url(https://bestwallpapers.co/wp-content/uploads/2018/05/black-background-hole-4k-hd-desktop-wallpaper-for-ultra-tv.jpg)
 }
+p{color:white}
+#messageBody{color:black};
 
 #homeTitle {
   font-size: 150px;

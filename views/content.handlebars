@@ -20,7 +20,7 @@
                 <form>
                     <div class="form-group">
                         <label for="insultInputs" class="genText">Insult Generator</label>
-                        <input type="text" class="form-control genInput" id="insult" placeholder="">
+                            <p id = "genInsult"></p>
                     </div>
                 </form>
             </div>
@@ -37,7 +37,8 @@
                 <form>
                     <div class="form-group">
                         <label for="complimentInputs" class="genText">Compliment Generator</label>
-                        <input type="text" class="form-control genInput" id="compliment" placeholder="">
+
+                        <p id="genComp"></p>
                     </div>
                 </form>
             </div>
@@ -45,7 +46,7 @@
 
                 <button id="compButt" type="button" class="btn btn-primary pgButt contentButt">Generate</button>
                 <button class="btn btn-primary pgButt saveButt contentButt" type="button">Save</button>
-                <button class="btn btn-primary pgButt sendButt contentButt" type="button">Send</button>
+                <button id = "compSendButt" class="btn btn-primary pgButt sendButt contentButt" type="button">Send</button>
             </div>
         </div>
         <div class="col-md-2"></div>
@@ -61,17 +62,17 @@
         <div class="col-md-2"></div>
         <div class="card cards" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">Popular Insults</h5>
+               
+                <p class="card-text"></p>
             </div>
         </div>
         <div class="col-md-1 col-lg-2"></div>
         <div class="card cards" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">Popular Compliments</h5>
+                
+                <p class="card-text"></p>
             </div>
         </div>
         <div class="col-md-2"></div>
@@ -94,9 +95,9 @@
                         </div>
                         <div class="form-group">
                             <label for="inputInsComp">Message</label>
-                            <input type="messages" class="form-control" id="message" placeholder="">
+                            <p id = "messageBody">hello</p>
                         </div>
-                        <button type="submit" class="btn btn-primary pgButt sendButt">Send</button>
+                        <button type="submit" id = "sendMessage" class="btn btn-primary pgButt sendButt">Send</button>
                     </form>
                 </div>
             </div>

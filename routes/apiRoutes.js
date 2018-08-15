@@ -1,4 +1,12 @@
 var db = require("../models");
+var keys = require("../keys.js");
+var twilio = keys.twilio;
+const accountSid = twilio.accountSid ;
+const authToken = twilio.authToken;
+const client = require('twilio')(accountSid, authToken);
+
+console.log(accountSid, authToken);
+
 
 module.exports = function(app) {
   // Get all examples
@@ -10,9 +18,20 @@ module.exports = function(app) {
       where: { id: id }
     }).then(function(complementBody) {
       console.log(complementBody[0].MessageBody);
-      var hbsObject = { complement: complementBody[0].MessageBody };
-      console.log(hbsObject);
-      res.render("content", hbsObject);
+      res.json(complementBody[0].MessageBody);
     });
   });
+
+  app.post("/api/complements" , function(req,res){
+    console.log(req.body);
+    client.messages
+  .create({
+     body: req.body.message,
+     from: '+15207048056',
+     to: "+1" +req.body.number
+   })
+  .then(message => console.log(message.sid))
+  .done();
+    
+  })
 };
