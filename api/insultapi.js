@@ -14,6 +14,6 @@ cb(x)
 
 });
   
-module.export = getInsult;
+module.exports = getInsult;
 
 }

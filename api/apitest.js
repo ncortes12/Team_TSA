@@ -1,4 +1,4 @@
-var getInsult = require ("/insultapi.js");
+var getInsult = require ("insultapi.js");
 
 getInsult(function(data){
 
