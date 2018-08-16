@@ -21,7 +21,9 @@ $("#compButt").on("click", function() {
 
 $("#sendMessage").on("click", function(event) {
   event.preventDefault();
-  var phone = $("#phonenumber").val().trim();
+  var phone = $("#phonenumber")
+    .val()
+    .trim();
   var newText = {
     number: phone,
     message: message
@@ -33,6 +35,7 @@ $("#sendMessage").on("click", function(event) {
     alert("You sent a message!");
   });
 });
+
 
 
 //Complements above, insults below
@@ -71,4 +74,14 @@ $("#sendMessage").on("click", function(event) {
   }).then(function() {
     alert("You sent a message!");
   });
+
+$("#logButt").on("click", function(event) {
+  event.preventDefault();
+  $("#loginModal").modal("show");
+});
+
+$(".contButt").on("submit", function(event) {
+  event.preventDefault();
+  location.href = "http://localhost:3000/welcome";
+
 });
