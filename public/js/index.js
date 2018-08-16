@@ -35,3 +35,13 @@ $("#sendMessage").on("click", function(event) {
     alert("You sent a message!");
   });
 });
+
+$("#logButt").on("click", function(event) {
+  event.preventDefault();
+  $("#loginModal").modal("show");
+});
+
+$(".contButt").on("submit", function(event) {
+  event.preventDefault();
+  location.href = "http://localhost:3000/welcome";
+});
