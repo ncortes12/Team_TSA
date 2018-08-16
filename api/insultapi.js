@@ -15,5 +15,3 @@ cb(x)
 });
   
 module.exports = getInsult;
-
-}
