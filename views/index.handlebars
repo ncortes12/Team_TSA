@@ -16,10 +16,17 @@
   </div>
   <div class="row">
     <div class="col-md-4"></div>
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+   
     <a href="#" onclick="signOut();">Sign out</a>
     <div class="col-md-4"></div>
   </div>
+
+   <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-1">
+      <button type="submit"  data-onsuccess="onSignIn" class="btn btn-primary pgButt g-signin2" id="regCont">Register</button>
+    </div>
+   
 
   <!-- Modal for Register -->
 
@@ -32,15 +39,9 @@
         <div class="modal-body">
           <form class="contButt">
             <div class="form-group">
-              <label for="exampleInputEmail1">Create Username</label>
-              <input type="email" class="form-control" id="createUser" aria-describedby="emailHelp" placeholder="Enter desired Username">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your Username with anyone else.</small>
+             <div  data-theme="dark"></div>
             </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="createPass" placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-primary pgButt" id="regCont">Continue</button>
+            <button type="submit"  data-onsuccess="onSignIn" class="btn btn-primary pgButt g-signin2" id="regCont">Continue</button>
           </form>
         </div>
       </div>
@@ -58,16 +59,8 @@
         </div>
         <div class="modal-body">
           <form class="contButt">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Username</label>
-              <input type="email" class="form-control" id="logUser" aria-describedby="emailHelp" placeholder="Enter Username">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your Username with anyone else.</small>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="logPass" placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-primary pgButt" id="logCont">Continue</button>
+           
+          <button type="submit"  data-onsuccess="onSignIn" class="btn btn-primary pgButt g-signin2" id="regCont">Continue</button>
             <button class="btn btn-primary pgButt">Return</button>
           </form>
         </div>
@@ -92,13 +85,37 @@
       console.log('User signed out.');
     });
   }
-</script>
-
-
-<script type="text/javascript">
-  $(".contButt").on("submit", function (event) {
-    event.preventDefault();
+var userEmail;
+var id_token;
+  function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+ // console.log('ID: ' + profile.getId()); 
+  //console.log('Name: ' + profile.getName());
+  //console.log('Image URL: ' + profile.getImageUrl());
+  //console.log('Email: ' + profile.getEmail()); 
+  userEmail = profile.getEmail();
+  
+  id_token = googleUser.getAuthResponse().id_token;
+}
+$("#regCont").on("click", function(event) {
+  
+  console.log(userEmail);
+  console.log(id_token);
+  var newUser = {
+    Username: userEmail,
+    Password: id_token
+  };
+  console.log(newUser)
+  $.ajax("api/users",{
+    type:"POST",
+    data: newUser
+  }).then(function(data){
     location.href = "http://localhost:3000/welcome";
+    console.log(data)
+})
+  
+  
+  
+});
 
-  });
 </script>

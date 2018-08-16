@@ -34,4 +34,25 @@ module.exports = function(app) {
   .done();
     
   })
+
+app.post("/api/users", function (req,res){
+  console.log(req.body);
+  db.User.findAll({where:{Password:req.body.Password}}).then(function(data){
+    if(data.length<1){
+      db.User.create({Username:req.body.Username,
+      Password:req.body.Password}).then(function(data){
+        res.json(req.body);
+      })
+    }
+    else{res.json(req.body);}
+  })
+  
+})
+
+
+  
+  
+
+
+
 };
