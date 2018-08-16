@@ -33,3 +33,42 @@ $("#sendMessage").on("click", function(event) {
     alert("You sent a message!");
   });
 });
+
+
+//Complements above, insults below
+
+
+var getInsult;
+//var message;
+
+
+$("#insulButt").on("click", function() {
+  getInsult()
+  console.log("working insult");
+  $.ajax("api/insultapi/" {
+    type: "GET"
+  }).then(function(getInsult) {
+    console.log("doing insult things");
+    message = data;
+    $("#genComp").text(data);
+  });
+  $("#compSendButt").on("click", function() {
+    console.log("hello" + getInsult);
+    $("#messageBody").text(getInsult);
+  });
+});
+
+$("#sendMessage").on("click", function(event) {
+  event.preventDefault();
+  var phone = $("#phonenumber").val().trim();
+  var newText = {
+    number: phone,
+    message: message
+  };
+  $.ajax("api/complements", {
+    type: "POST",
+    data: newText
+  }).then(function() {
+    alert("You sent a message!");
+  });
+});
