@@ -38,7 +38,9 @@ $("#sendMessage").on("click", function(event) {
 var messageId;
 var UserId;
 
+
 $("#compSaveButt").on("click", function(event) {
+
   event.preventDefault();
   messageId = randomNumber
   userId = window.location.pathname;
@@ -46,3 +48,4 @@ $("#compSaveButt").on("click", function(event) {
   console.log("number here" + messageId);
   console.log(userId);
 });
+
