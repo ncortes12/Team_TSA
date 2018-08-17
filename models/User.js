@@ -3,5 +3,8 @@ module.exports = function(sequelize, DataTypes) {
     Username: DataTypes.STRING,
     Password: DataTypes.TEXT
   });
+  User.associate = function(models) {
+    User.belongsToMany(models.Message, { through: "UserMessage" });
+  };
   return User;
 };
