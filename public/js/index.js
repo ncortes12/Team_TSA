@@ -19,6 +19,25 @@ $("#compButt").on("click", function() {
   });
 });
 
+$("#insulButt").on("click", function(event) {
+  event.preventDefault();
+  randomNumber = Math.floor(Math.random() * 75) + 1;
+  console.log("working");
+  console.log(randomNumber);
+  $.ajax("/api/insults/" + randomNumber, {
+    type: "GET"
+  }).then(function(data) {
+    console.log("doing things");
+    // console.log(data);
+    message = data;
+    $("#genInsult").text(data);
+  });
+  $("#insultSendButt").on("click", function() {
+    console.log("hello" + message);
+    $("#messageBody").text(message);
+  });
+});
+
 $("#sendMessage").on("click", function(event) {
   event.preventDefault();
   var phone = $("#phonenumber")
@@ -35,17 +54,30 @@ $("#sendMessage").on("click", function(event) {
     alert("You sent a message!");
   });
 });
-var messageId;
-var UserId;
+// var messageId;
+// var UserId;
+// var UserIdNum;
 
 
-$("#compSaveButt").on("click", function(event) {
+// $("#compSaveButt").on("click", function(event) {
+//   event.preventDefault();
+//   messageId = randomNumber;
+//   UserId = window.location.pathname.slice(9);
+//   UserIdNum = parseInt(UserId);
 
-  event.preventDefault();
-  messageId = randomNumber
-  userId = window.location.pathname;
-  
-  console.log("number here" + messageId);
-  console.log(userId);
-});
+//   console.log("number here" + messageId);
+//   console.log(UserIdNum);
+//   var newSaved = {
+//     MessageId: messageId,
+//     UserId: UserIdNum
+//   };
+// $.ajax("/api/saved",{
+//   type: "POST",
+//   data: newSaved
+// }).then(function(){
+//   console.log("thing and such")
+// })
+// });
+
+
 

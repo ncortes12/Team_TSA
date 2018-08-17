@@ -3,8 +3,11 @@ module.exports = function(sequelize, DataTypes) {
     MessageBody: DataTypes.STRING,
     Insult: DataTypes.BOOLEAN
   });
-  Message.associate = function(models){
-    Message.belongsToMany(models.User, { through: "UserMessage" });
-  }
+  Message.associate = function(models) {
+    Message.belongsToMany(models.User, {
+      through: "UserMessage",
+      foreignKey: "MessageId"
+    });
+  };;
   return Message;
 };
