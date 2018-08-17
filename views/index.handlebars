@@ -14,84 +14,80 @@
   <div class="row">
     <p id="homeDesc">The one place that makes or breaks a person’s day anonymously</p>
   </div>
+
   <div class="row">
     <div class="col-md-4"></div>
-
-    <a href="#" onclick="signOut();">Sign out</a>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+     <div class="col-md-1"></div>
+    <a class="pgButt" id="signoutButt" href="#" onclick="signOut();">Sign out</a>
+    <div class="col-md-1"></div>
+    <button class="continue pgButt">Go To Site</button>
     <div class="col-md-4"></div>
   </div>
 
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-1">
-      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-      <button class="continue">Go To Site</button>
-    </div>
 
 
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="/js/index.js"></script>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/js/index.js"></script>
+  <script>
 
-
-    <script>
-
-      var revokeAllScopes = function () {
-        auth2.disconnect();
-      }
-      function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-          console.log('User signed out.');
-        });
-      }
-      var userEmail;
-      var id_token;
-      var userId;
-      function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        // console.log('ID: ' + profile.getId()); 
-        //console.log('Name: ' + profile.getName());
-        //console.log('Image URL: ' + profile.getImageUrl());
-        //console.log('Email: ' + profile.getEmail()); 
-        userEmail = profile.getEmail();
-
-        id_token = googleUser.getAuthResponse().id_token;
-      }
-      $(".g-signin2").on("click", function (event) {
-
-        console.log(userEmail);
-        console.log(id_token);
-        var newUser = {
-          Username: userEmail,
-          Password: id_token
-        };
-        console.log(newUser)
-        $.ajax("api/users", {
-          type: "POST",
-          data: newUser
-        }).then(function (data) {
-          //location.href = "http://localhost:3000/welcome";
-          console.log(data)
-          userId = data[0].id
-        })
+    var revokeAllScopes = function () {
+      auth2.disconnect();
+    }
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
       });
+    }
+    var userEmail;
+    var id_token;
+    var userId;
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      // console.log('ID: ' + profile.getId()); 
+      //console.log('Name: ' + profile.getName());
+      //console.log('Image URL: ' + profile.getImageUrl());
+      //console.log('Email: ' + profile.getEmail()); 
+      userEmail = profile.getEmail();
 
-      $(".continue").on("click", function (event) {
-        event.preventDefault();
-        console.log(userId)
+      id_token = googleUser.getAuthResponse().id_token;
+    }
+    $(".g-signin2").on("click", function (event) {
 
-        window.location.href = "http://localhost:3000/welcome/" + userId
-        //$.ajax("/welcome/" + userId, {
-        //  type: "GET"
-       // }).then(function (response) {
-         // console.log(response);
-          
-       // })
-     
+      console.log(userEmail);
+      console.log(id_token);
+      var newUser = {
+        Username: userEmail,
+        Password: id_token
+      };
+      console.log(newUser)
+      $.ajax("api/users", {
+        type: "POST",
+        data: newUser
+      }).then(function (data) {
+        //location.href = "http://localhost:3000/welcome";
+        console.log(data)
+        userId = data[0].id
       })
+    });
 
-    </script>
+    $(".continue").on("click", function (event) {
+      event.preventDefault();
+      console.log(userId)
+
+      window.location.href = "http://localhost:3000/welcome/" + userId
+      //$.ajax("/welcome/" + userId, {
+      //  type: "GET"
+      // }).then(function (response) {
+      // console.log(response);
+
+      // })
+
+    })
+
+  </script>
