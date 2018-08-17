@@ -4,7 +4,10 @@ module.exports = function(sequelize, DataTypes) {
     Password: DataTypes.TEXT
   });
   User.associate = function(models) {
-    User.belongsToMany(models.Message, { through: "UserMessage" });
+    User.belongsToMany(models.Message, {
+      through: "UserMessage",
+      foreignKey: "UserId"
+   });
   };
   return User;
 };

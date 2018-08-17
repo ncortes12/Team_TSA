@@ -22,6 +22,18 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/insults/:id", function(req, res) {
+    console.log("look this route is working! You're the best!");
+    var id = req.params.id;
+    console.log(id);
+    db.Insult.findAll({
+      where: { id: id }
+    }).then(function(complementBody) {
+      console.log(complementBody[0].MessageBody);
+      res.json(complementBody[0].MessageBody);
+    });
+  });
+
   app.post("/api/complements" , function(req,res){
     console.log(req.body);
     client.messages
@@ -51,6 +63,10 @@ app.post("/api/users", function (req,res){
   }
   })
   
+})
+
+app.post("/api/saved", function(req,res){
+  db.User.update({})
 })
 
 
