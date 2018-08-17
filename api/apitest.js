@@ -1,5 +1,4 @@
 var getInsult = require("../api/insultapi.js");
-var keys = require("../keys.js");
 
 getInsult(function (data) {
 
