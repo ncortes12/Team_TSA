@@ -58,6 +58,7 @@ $("#sendMessage").on("click", function(event) {
 // var UserId;
 // var UserIdNum;
 
+
 // $("#compSaveButt").on("click", function(event) {
 //   event.preventDefault();
 //   messageId = randomNumber;
@@ -77,3 +78,6 @@ $("#sendMessage").on("click", function(event) {
 //   console.log("thing and such")
 // })
 // });
+
+
+
