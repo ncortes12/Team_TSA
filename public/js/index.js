@@ -5,7 +5,7 @@ $("#compButt").on("click", function() {
   randomNumber = Math.floor(Math.random() * 200) + 1;
   console.log("working");
   console.log(randomNumber);
-  $.ajax("api/complements/" + randomNumber, {
+  $.ajax("/api/complements/" + randomNumber, {
     type: "GET"
   }).then(function(data) {
     console.log("doing things");
@@ -28,20 +28,21 @@ $("#sendMessage").on("click", function(event) {
     number: phone,
     message: message
   };
-  $.ajax("api/complements", {
+  $.ajax("/api/complements", {
     type: "POST",
     data: newText
   }).then(function() {
     alert("You sent a message!");
   });
 });
+var messageId;
+var UserId;
 
-$("#logButt").on("click", function(event) {
+$("#compSaveButt").on("click", function(event) {
   event.preventDefault();
-  $("#loginModal").modal("show");
-});
-
-$(".contButt").on("submit", function(event) {
-  event.preventDefault();
-  location.href = "http://localhost:3000/welcome";
+  messageId = randomNumber
+  userId = window.location.pathname;
+  
+  console.log("number here" + messageId);
+  console.log(userId);
 });

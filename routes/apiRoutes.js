@@ -36,15 +36,19 @@ module.exports = function(app) {
   })
 
 app.post("/api/users", function (req,res){
-  console.log(req.body);
-  db.User.findAll({where:{Password:req.body.Password}}).then(function(data){
+  // console.log(req.body);
+  db.User.findAll({where:{Username:req.body.Username}}).then(function(data){
+    // console.log(data)
     if(data.length<1){
       db.User.create({Username:req.body.Username,
       Password:req.body.Password}).then(function(data){
-        res.json(req.body);
+        console.log(data)
+        res.json(data);
       })
     }
-    else{res.json(req.body);}
+    else{res.json(data);
+    console.log(data[0].id)
+  }
   })
   
 })

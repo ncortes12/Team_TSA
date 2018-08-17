@@ -6,7 +6,9 @@ module.exports = function(app) {
     res.render("index");
   });
 
-  app.get("/welcome", function(req, res) {
+  app.get("/welcome/:id", function(req, res) {
+    // console.log(req);
+    //res.render("content");
     res.render("content");
   });
 
