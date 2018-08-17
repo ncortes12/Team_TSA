@@ -3,8 +3,6 @@
 body {
   background-image: url(https://bestwallpapers.co/wp-content/uploads/2018/05/black-background-hole-4k-hd-desktop-wallpaper-for-ultra-tv.jpg)
 }
-p{color:white}
-#messageBody{color:black};
 
 #homeTitle {
   font-size: 150px;
@@ -17,6 +15,8 @@ p{color:white}
   margin-top: 15%;
 }
 
+
+
 #homeDesc {
   font-size: 30px;
   display: block;
@@ -26,6 +26,9 @@ p{color:white}
   color: white;
   text-align: center;
 }
+
+p{color:white}
+#messageBody{color:black};
 
 #regButt {
   margin-top: 13%;
@@ -41,10 +44,22 @@ p{color:white}
   margin-right: auto;
 }
 
+.g-signin2 {
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+#signoutButt {
+  text-decoration: none;
+}
+
+.continue {}
+
+
 .pgButt {
   font-family: 'Do Hyeon', sans-serif;
   background-color: black;
   border: solid 2px gray;
+  color: white;
 }
 
 .modal {
