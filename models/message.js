@@ -5,9 +5,9 @@ module.exports = function(sequelize, DataTypes) {
   });
   Message.associate = function(models) {
     Message.belongsToMany(models.User, {
-      through: "UserMessage",
+      through: "UserMessages",
       foreignKey: "MessageId"
     });
-  };;
+  };
   return Message;
 };

@@ -66,7 +66,10 @@ app.post("/api/users", function (req,res){
 })
 
 app.post("/api/saved", function(req,res){
-  db.User.update({})
+  console.log(req.body);
+  db.usermessage.create({ MessageID: '34', UserId: '1' }).then(function(data){
+    console.log(data);
+  })
 })
 
 
